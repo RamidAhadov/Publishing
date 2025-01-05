@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace PrometheusPublisher.Tools;
 
-public class Services
+public sealed class Services
 {
     private Services()
     {
@@ -16,7 +16,7 @@ public class Services
     {
         if (_instance == null)
         {
-            return new Services();
+            _instance = new Services();
         }
         
         return _instance;
